@@ -4,4 +4,7 @@ USE CollegeDB;
 use collegedbbca;
 CREATE TABLE course (courseID VARCHAR(20),coursename VARCHAR (20), credits INT (20) PRIMARY KEY, departmentID VARCHAR(20));
 INSERT INTO course(courseID, coursename, credits, departmentID) VALUES (10,"BCA",12,1);
+INSERT INTO course(courseID,coursename,credits,departmentID)VALUES(20."BCA",13,1);
+INSERT INTO course(courseID,coursename,credits,departmentID)VALUES(30,"BCA",14,1);
+SELECT*FROM course;
 DESC course;
