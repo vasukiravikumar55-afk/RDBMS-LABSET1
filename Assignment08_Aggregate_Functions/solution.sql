@@ -2,6 +2,8 @@ DROP DATABASE IF EXISTS CollegeDB;
 CREATE DATABASE CollegeDB;
 USE CollegeDB;
 
+-- Create Employee table
+
 CREATE TABLE Employee (
     EmployeeID INT,
     EmployeeName VARCHAR(50),
@@ -11,6 +13,7 @@ CREATE TABLE Employee (
 
 
 -- Insert records
+
 INSERT INTO Employee (EmployeeID, EmployeeName, Department, Salary)
 VALUES (101, 'Ravi', 'HR', 25000);
 
@@ -44,4 +47,3 @@ SELECT MIN(Salary) AS Minimum_Salary FROM Employee;
 -- AVG()
 
 SELECT AVG(Salary) AS Average_Salary FROM Employee;
-
