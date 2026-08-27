@@ -2,50 +2,63 @@ DROP DATABASE IF EXISTS CollegeDB;
 CREATE DATABASE CollegeDB;
 USE CollegeDB;
 
--- Create Department
 
-CREATE TABLE Department (
-    DepartmentID INT,
-    DepartmentName VARCHAR(50)
+-- Create Course
+
+CREATE TABLE Course (
+    CourseID INT,
+    CourseName VARCHAR(50),
+    Credits INT
 );
 
--- Insert sample records (department)
 
-INSERT INTO Department (DepartmentID, DepartmentName)
-VALUES (101, 'Computer Science');
+-- Insert sample records (course)
 
-INSERT INTO Department (DepartmentID, DepartmentName)
-VALUES (102, 'Mathematics');
+INSERT INTO Course (CourseID, CourseName, Credits)
+VALUES (201, 'Database Systems', 4);
 
-INSERT INTO Department (DepartmentID, DepartmentName)
-VALUES (103, 'Physics');
+INSERT INTO Course (CourseID, CourseName, Credits)
+VALUES (202, 'Data Structures', 3);
 
--- Create Student
-CREATE TABLE Student (
+INSERT INTO Course (CourseID, CourseName, Credits)
+VALUES (203, 'Mathematics', 4);
+
+
+-- Create Enrollment
+
+CREATE TABLE Enrollment (
+    EnrollmentID INT,
     StudentID INT,
-    StudentName VARCHAR(50),
-    DepartmentID INT
+    CourseID INT
 );
 
 
--- Insert sample records (student)
+-- Insert sample records (enrollment)
 
-INSERT INTO Student (StudentID, StudentName, DepartmentID)
-VALUES (1001, 'Arun', 101);
+INSERT INTO Enrollment (EnrollmentID, StudentID, CourseID)
+VALUES (1, 1001, 201);
 
-INSERT INTO Student (StudentID, StudentName, DepartmentID)
-VALUES (1002, 'Divya', 102);
+INSERT INTO Enrollment (EnrollmentID, StudentID, CourseID)
+VALUES (2, 1001, 202);
 
-INSERT INTO Student (StudentID, StudentName, DepartmentID)
-VALUES (1003, 'Karthik', 101);
+INSERT INTO Enrollment (EnrollmentID, StudentID, CourseID)
+VALUES (3, 1002, 203);
 
-INSERT INTO Student (StudentID, StudentName, DepartmentID)
-VALUES (1004, 'Nisha', 103);
+INSERT INTO Enrollment (EnrollmentID, StudentID, CourseID)
+VALUES (4, 1003, 201);
 
--- INNER JOIN query
 
-SELECT Student.StudentName, Department.DepartmentName
-FROM Student
-INNER JOIN Department
-ON Student.DepartmentID = Department.DepartmentID;
+-- LEFT JOIN
 
+SELECT *
+FROM Course
+LEFT JOIN Enrollment
+ON Course.CourseID = Enrollment.CourseID;
+
+
+-- RIGHT JOIN
+
+SELECT *
+FROM Course
+RIGHT JOIN Enrollment
+ON Course.CourseID = Enrollment.CourseID;
