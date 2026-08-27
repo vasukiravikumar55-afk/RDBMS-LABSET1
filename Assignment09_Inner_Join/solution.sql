@@ -2,6 +2,15 @@ DROP DATABASE IF EXISTS CollegeDB;
 CREATE DATABASE CollegeDB;
 USE CollegeDB;
 
+-- Create Department
+
+CREATE TABLE Department (
+    DepartmentID INT,
+    DepartmentName VARCHAR(50)
+);
+
+-- Insert sample records (department)
+
 INSERT INTO Department (DepartmentID, DepartmentName)
 VALUES (101, 'Computer Science');
 
