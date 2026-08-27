@@ -1,6 +1,20 @@
 DROP DATABASE IF EXISTS CollegeDB;
 CREATE DATABASE CollegeDB;
 USE CollegeDB;
+
+
+-- Create Marksheet table
+
+CREATE TABLE Marksheet (
+    RollNo INT,
+    Name VARCHAR(50),
+    Department VARCHAR(50),
+    Marks INT
+);
+
+
+-- Insert sample records
+
 INSERT INTO Marksheet VALUES (1, "Arun", "CSE", 85);
 
 INSERT INTO Marksheet VALUES (2, "Divya", "IT", 78);
