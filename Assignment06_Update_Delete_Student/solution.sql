@@ -12,12 +12,31 @@ CREATE TABLE Student(
     PhoneNumber BIGINT
 );
 
+
 INSERT INTO Student(StudentID,StudentName,Gender,DepartmentID)
 VALUES
-(1001,'Arun','Male',101);
-(1002,'Divya','Female',102);
+(1001,'Arun','Male',101),
+(1002,'Divya','Female',102),
 (1003,'Karthik','Male',101);
 
+-- Update Karthik's DepartmentID
+
+UPDATE Student
+SET DepartmentID = 103
+WHERE StudentName = "Karthik";
+
+
+-- Delete StudentID 1002
+
+DELETE FROM Student
+WHERE StudentID = 1002;
+
+
+-- Display all records
+
+SELECT * FROM Student;
+
+DESC Student;
 -- Update Karthik's DepartmentID
 
 -- Delete StudentID 1002
