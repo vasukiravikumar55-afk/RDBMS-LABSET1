@@ -2,7 +2,13 @@ DROP DATABASE IF EXISTS CollegeDB;
 CREATE DATABASE CollegeDB;
 USE CollegeDB;
 
--- Create Employee table
+CREATE TABLE Employee (
+    EmployeeID INT,
+    EmployeeName VARCHAR(50),
+    Department VARCHAR(50),
+    Salary INT
+);
+
 
 -- Insert records
 INSERT INTO Employee (EmployeeID, EmployeeName, Department, Salary)
